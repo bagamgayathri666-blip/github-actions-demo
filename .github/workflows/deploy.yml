@@ -1,0 +1,21 @@
+name: Manual Deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Display Files
+        run: ls -la
+
+      - name: Print Message
+        run: echo "Deployment started manually."
+
+      - name: Show Current Directory
+        run: pwd
