@@ -1,0 +1,12 @@
+name: Pull Request Workflow
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run test
+        run: echo "Pull request workflow executed"
