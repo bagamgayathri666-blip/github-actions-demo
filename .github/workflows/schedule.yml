@@ -2,7 +2,7 @@ name: Scheduled Workflow
 
 on:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '*/2 * * * *'
 
 jobs:
   scheduled-job:
@@ -16,4 +16,4 @@ jobs:
         run: date
 
       - name: Print Message
-        run: echo "This workflow is running automatically every day at 9:00 AM UTC."
+        run: echo "This workflow is running automatically every 2 minutes."
