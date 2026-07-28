@@ -1,0 +1,26 @@
+name: Schedule (Cron Jobs) Demo
+
+on:
+  schedule:
+    # Runs every 5 minutes
+    - cron: '*/5 * * * *'
+
+jobs:
+  cron-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Display Current Date and Time
+        run: echo "Current Date and Time: $(date)"
+
+      - name: Display Message
+        run: echo "Hello! This workflow was triggered by a Cron Job."
+
+      - name: Show GitHub Information
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Triggered By: ${{ github.event_name }}"
