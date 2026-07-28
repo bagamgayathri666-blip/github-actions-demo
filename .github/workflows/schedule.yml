@@ -1,0 +1,19 @@
+name: Scheduled Workflow
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+
+jobs:
+  scheduled-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Display Current Date and Time
+        run: date
+
+      - name: Print Message
+        run: echo "This workflow is running automatically every day at 9:00 AM UTC."
