@@ -2,18 +2,15 @@ name: Scheduled Workflow
 
 on:
   schedule:
-    - cron: '*/1 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   scheduled-job:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Display Current Date and Time
-        run: date
+      - run: date
 
-      - name: Print Message
-        run: echo "This workflow is running automatically every 1 minutes."
+      - run: echo "Scheduled workflow is running."
