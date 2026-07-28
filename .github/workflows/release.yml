@@ -1,0 +1,22 @@
+name: Release Workflow
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Display Release Information
+        run: echo "A new GitHub Release has been published."
+
+      - name: Display Date
+        run: date
+
+      - name: Deploy Application
+        run: echo "Deploying application for the new release..."
