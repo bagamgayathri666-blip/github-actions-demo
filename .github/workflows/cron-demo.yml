@@ -1,0 +1,13 @@
+name: Cron Demo
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "Hello from Cron Demo"
+        
